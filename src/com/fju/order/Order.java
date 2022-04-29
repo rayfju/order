@@ -8,10 +8,10 @@ public class Order {
     public Order(int amount, Delivery delivery) {
         this.amount = amount;
         this.delivery = delivery;
-        shipFeed=delivery.price;
+        shipFeed = delivery.price;
     }
     public int total(){
-        if (delivery.name.equals("Shopee")&& amount >= 199){
+        if (delivery instanceof ShopeeDelivery && amount >= 199){
             return amount;
         }
         return  amount+shipFeed;
